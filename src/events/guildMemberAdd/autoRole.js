@@ -12,11 +12,6 @@ module.exports = async (client, member) => {
 		let guild = member.guild;
 		if (!guild) return;
 
-		const autoRole = await AutoRole.findOne({ guildId: guild.id });
-		if (!autoRole) return;
-
-		await member.roles.add(autoRole.roleId);
-
 		const welcomeChannel = guild.channels.cache.get(guild.systemChannelId);
 		const rulesChannel =
 			guild.channels.cache.get(guild.rulesChannelId) ||
@@ -41,6 +36,17 @@ module.exports = async (client, member) => {
 					value: 'You can get roles in the roles channel!',
 				},
 			);
+
+		const autoRole = await AutoRole.findOne({ guildId: guild.id });
+		if (!autoRole) {
+			await welcomeChannel.send({
+				content: `<@${member.id}>`,
+				embeds: [welcomeEmbed],
+			});
+			return;
+		}
+
+		await member.roles.add(autoRole.roleId);
 
 		await welcomeChannel.send({
 			content: `<@${member.id}>`,
