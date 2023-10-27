@@ -5,7 +5,7 @@ const {
 	PermissionFlagsBits,
 	EmbedBuilder,
 } = require('discord.js');
-const Rules = require('../../models/Rules');
+const Rules = require('../../models/Rules.js');
 
 module.exports = {
 	/**

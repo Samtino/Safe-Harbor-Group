@@ -4,7 +4,7 @@ const {
 	ApplicationCommandOptionType,
 	PermissionFlagsBits,
 } = require('discord.js');
-const AutoRole = require('../../models/autoRole');
+const AutoRole = require('../../models/autoRole.js');
 
 module.exports = {
 	/**

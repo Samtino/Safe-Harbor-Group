@@ -1,5 +1,5 @@
 const { Client, GuildMember, EmbedBuilder } = require('discord.js');
-const AutoRole = require('../../models/autoRole');
+const AutoRole = require('../../models/autoRole.js');
 
 module.exports = async (client, member) => {
 	/**
