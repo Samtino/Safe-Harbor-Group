@@ -26,8 +26,7 @@ module.exports = async (client, interaction) => {
 		},
 		{
 			name: 'Shipping',
-			// value: '1166777924083523715',
-			value: '794351586130264100', // Guest role on test server
+			value: '1166777924083523715',
 		},
 	];
 
